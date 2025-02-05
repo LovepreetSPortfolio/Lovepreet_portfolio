@@ -70,6 +70,21 @@ UPDATE ushouseholdincome
 SET `Type` = 'Borough'
 WHERE `Type` = 'Boroughs';
 
+#STANDARDIZING DATA
+
+UPDATE ushouseholdincome
+SET County = UPPER(County);
+
+UPDATE ushouseholdincome
+SET City = UPPER(City);
+
+UPDATE ushouseholdincome
+SET Place = UPPER(Place);
+
+UPDATE ushouseholdincome
+SET State_Name = UPPER(State_Name);
+
+
 SELECT ALand, AWater
 FROM ushouseholdincome
 WHERE (ALand = 0 OR ALand = '' OR ALand IS NULL)
